@@ -1,56 +1,69 @@
 import React, { Component } from "react";
-import { Grid, Cell } from "react-mdl";
+import { Container, Row, Col } from "react-bootstrap/dist/react-bootstrap";
 
 class LandingPage extends Component {
   state = {};
   render() {
     return (
-      <div style={{ width: "100%", margin: "auto" }}>
-        <Grid className="landing-grid">
-          <Cell col={12}>
-            <img
-              src={require("../profilepic.jpg")}
-              alt="avatar"
-              className="avatar-img"
-            />
+      <Button variant="primary">
+        Profile <Badge variant="light">9</Badge>
+        <span className="sr-only">unread messages</span>
+      </Button>
 
-            <div className="banner-text">
-              <h1>Derek's Portfolio</h1>
-              <hr />
+      //   <div style={{ width: "100%", margin: "auto" }}>
+      //     <Grid className="landing-grid">
+      //       <Cell col={12}>
+      //         <img
+      //           src={require("../profilepic.jpg")}
+      //           alt="avatar"
+      //           className="avatar-img"
+      //         />
 
-              <div className="inline-block-div">
-                <p>
-                  <b>Scripting:</b> Java | C | python | C#
-                  <br />
-                  <b>Database:</b> SQL | firebase <br />
-                  <b>Web Dev:</b> HTML | CSS | JavaScript (nodejs, reactjs)
-                </p>
-              </div>
+      //         <div className="banner-text">
+      //           <h1>Derek's Portfolio</h1>
+      //           <hr />
 
-              <br />
+      //           <div className="inline-block-div">
+      //             <p>
+      //               <code>
+      //                 <b>1 | Scripting:</b> Java | C | python | C#
+      //               </code>
+      //               <br />
+      //               <code>
+      //                 <b>2 | Database:</b> SQL | firebase
+      //               </code>{" "}
+      //               <br />
+      //               <code>
+      //                 <b>3 | Web Dev:</b> HTML | CSS | JavaScript (nodejs,
+      //                 reactjs)
+      //               </code>
+      //             </p>
+      //           </div>
 
-              <div className="social-links">
-                {/* linkedin */}
-                <a
-                  href="https://www.linkedin.com/in/derek-chen-521b16146/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <i className="fa fa-linkedin-square" aria-hidden="true" />
-                </a>
-                {/* Github */}
-                <a
-                  href="https://github.com/dezzy001"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <i className="fa fa-github-square" aria-hidden="true" />
-                </a>
-              </div>
-            </div>
-          </Cell>
-        </Grid>
-      </div>
+      //           <br />
+
+      //           <div className="social-links">
+      //             {/* linkedin */}
+      //             <a
+      //               href="https://www.linkedin.com/in/derek-chen-521b16146/"
+      //               rel="noopener noreferrer"
+      //               target="_blank"
+      //             >
+      //               <i className="fa fa-linkedin-square" aria-hidden="true" />
+      //             </a>
+      //             {/* Github */}
+      //             <a
+      //               href="https://github.com/dezzy001"
+      //               rel="noopener noreferrer"
+      //               target="_blank"
+      //             >
+      //               <i className="fa fa-github-square" aria-hidden="true" />
+      //             </a>
+      //           </div>
+      //         </div>
+      //       </Cell>
+      //     </Grid>
+      //   </div>
     );
   }
 }
