@@ -1,6 +1,14 @@
+/* native tags */
 * {
   /* black text */
   color: black;
+}
+
+code {
+  background-color: rgb(192, 59, 59);
+  font-family: "Consolas", cursive;
+  padding: 0px 5px 0px 5px;
+  border-radius: 5px;
 }
 
 .header-color {
@@ -58,7 +66,7 @@
 /* Banner code here ------------------------------------------- */
 
 .banner-text {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(50, 50, 50, 0.4);
   width: 75%;
   margin: auto;
   border-radius: 20px;
@@ -108,8 +116,9 @@
   font-size: 4em;
   /* padding: 8px; */
 }
+
 .social-links i:hover {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 1);
   font-size: 4em;
   /* padding: 8px; */
 }

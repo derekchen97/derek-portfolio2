@@ -20,10 +20,18 @@ class LandingPage extends Component {
 
               <div className="inline-block-div">
                 <p>
-                  <b>Scripting:</b> Java | C | python | C#
+                  <code>
+                    <b>1 | Scripting:</b> Java | C | python | C#
+                  </code>
                   <br />
-                  <b>Database:</b> SQL | firebase <br />
-                  <b>Web Dev:</b> HTML | CSS | JavaScript (nodejs, reactjs)
+                  <code>
+                    <b>2 | Database:</b> SQL | firebase
+                  </code>{" "}
+                  <br />
+                  <code>
+                    <b>3 | Web Dev:</b> HTML | CSS | JavaScript (nodejs,
+                    reactjs)
+                  </code>
                 </p>
               </div>
 
