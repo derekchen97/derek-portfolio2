@@ -1,14 +1,23 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "react-bootstrap/dist/react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Badge
+} from "react-bootstrap/dist/react-bootstrap";
 
 class LandingPage extends Component {
   state = {};
   render() {
     return (
-      <Button variant="primary">
-        Profile <Badge variant="light">9</Badge>
-        <span className="sr-only">unread messages</span>
-      </Button>
+      <div>
+        {" "}
+        <Button variant="primary">
+          Profile <Badge variant="light">9</Badge>
+          <span className="sr-only">unread messages</span>
+        </Button>
+      </div>
 
       //   <div style={{ width: "100%", margin: "auto" }}>
       //     <Grid className="landing-grid">
