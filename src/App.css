@@ -5,8 +5,8 @@
 }
 
 code {
-  background-color: rgb(192, 59, 59);
-  font-family: "Consolas", cursive;
+  background-color: rgba(200, 200, 200, 0.9);
+  font-family: monospace, cursive;
   padding: 0px 5px 0px 5px;
   border-radius: 5px;
 }
@@ -54,19 +54,20 @@ code {
   border-radius: 50%;
   border: 5px solid rgba(255, 255, 255, 0.7);
 
-  animation: 1s ease-out 0s 1 slideInFromLeft;
+  /* not working */
+  animation: slideInFromLeft 1s ease-out 0s 1 forwards;
 
-  -webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: fadein 3s; /* Firefox < 16 */
-  -ms-animation: fadein 3s; /* Internet Explorer */
-  -o-animation: fadein 3s; /* Opera < 12.1 */
-  animation: fadein 3s;
+  -webkit-animation: fadein 3s ease-out; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 3s ease-out; /* Firefox < 16 */
+  -ms-animation: fadein 3s ease-out; /* Internet Explorer */
+  -o-animation: fadein 3s ease-out; /* Opera < 12.1 */
+  animation: fadein 3s ease-out;
 }
 
 /* Banner code here ------------------------------------------- */
 
 .banner-text {
-  background-color: rgba(50, 50, 50, 0.4);
+  background-color: rgba(50, 50, 50, 1);
   width: 75%;
   margin: auto;
   border-radius: 20px;
@@ -101,13 +102,35 @@ code {
   display: inline-block;
 }
 
+#fade-in-animation-0-delay {
+  -webkit-animation: fadein 2s ease-in-out 0s 1 backwards; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s ease-in-out 0s 1 backwards; /* Firefox < 16 */
+  -ms-animation: fadein 2s ease-in-out 0s 1 backwards; /* Internet Explorer */
+  -o-animation: fadein 2s ease-in-out 0s 1 backwards; /* Opera < 12.1 */
+  animation: fadein 2s ease-in-out 0s 1 backwards;
+}
+#fade-in-animation-1-delay {
+  -webkit-animation: fadein 2s ease-in-out 0.5s 1 backwards; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s ease-in-out 0.5s 1 backwards; /* Firefox < 16 */
+  -ms-animation: fadein 2s ease-in-out 0.5s 1 backwards; /* Internet Explorer */
+  -o-animation: fadein 2s ease-in-out 0.5s 1 backwards; /* Opera < 12.1 */
+  animation: fadein 2s ease-in-out 0.5s 1 backwards;
+}
+#fade-in-animation-2-delay {
+  -webkit-animation: fadein 2s ease-in-out 1s 1 backwards; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: fadein 2s ease-in-out 1s 1 backwards; /* Firefox < 16 */
+  -ms-animation: fadein 2s ease-in-out 1s 1 backwards; /* Internet Explorer */
+  -o-animation: fadein 2s ease-in-out 1s 1 backwards; /* Opera < 12.1 */
+  animation: fadein 2s ease-in-out 1s 1 backwards;
+}
+
 /* Social links here */
 
 .social-links {
   color: white;
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 30%;
   margin: auto;
 }
 

@@ -20,15 +20,15 @@ class LandingPage extends Component {
 
               <div className="inline-block-div">
                 <p>
-                  <code>
+                  <code id="fade-in-animation-0-delay">
                     <b>1 | Scripting:</b> Java | C | python | C#
                   </code>
                   <br />
-                  <code>
+                  <code id="fade-in-animation-1-delay">
                     <b>2 | Database:</b> SQL | firebase
                   </code>{" "}
                   <br />
-                  <code>
+                  <code id="fade-in-animation-2-delay">
                     <b>3 | Web Dev:</b> HTML | CSS | JavaScript (nodejs,
                     reactjs)
                   </code>
