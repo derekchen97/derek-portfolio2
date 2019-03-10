@@ -16,6 +16,16 @@ class LandingPage extends Component {
 
             <div className="banner-text">
               <h1>Derek's Portfolio</h1>
+              <h2
+                style={{
+                  fontSize: "1.2em",
+                  color: "white",
+                  fontFamily: "monospace"
+                }}
+              >
+                University of Melbourne Graduate - Bachelor of Science Majoring
+                in Computing and Software systems
+              </h2>
               <hr />
 
               <div className="inline-block-div">
@@ -58,6 +68,7 @@ class LandingPage extends Component {
             </div>
           </Cell>
         </Grid>
+        <br />
       </div>
     );
   }

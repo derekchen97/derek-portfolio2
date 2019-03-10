@@ -26,9 +26,9 @@ class App extends Component {
             scroll
           >
             <Navigation>
-              <Link style={blackText} to="/resume">
+              {/* <Link style={blackText} to="/resume">
                 Resume
-              </Link>
+              </Link> */}
               <Link style={blackText} to="./">
                 About
               </Link>
@@ -42,7 +42,7 @@ class App extends Component {
           </Header>
           <Drawer title={title}>
             <Navigation>
-              <Link to="/resume">Resume</Link>
+              {/* <Link to="/resume">Resume</Link> */}
               <Link to="./">About</Link>
               <Link to="/project">Projects</Link>
               <Link to="/contact">Contact</Link>
