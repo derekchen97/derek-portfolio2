@@ -58,6 +58,9 @@ code {
   left: 0;
   width: 100%;
   height: 100%;
+
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Avatar code here -------------------------------------------- */
