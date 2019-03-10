@@ -9,6 +9,8 @@ class App extends Component {
   render() {
     //variables
     let title = "Derek's Portfolio";
+
+    //react-styles
     let blackText = {
       color: "#000"
     };
@@ -30,9 +32,9 @@ class App extends Component {
               <Link style={blackText} to="./">
                 About
               </Link>
-              {/* <Link style={blackText} to="/project">
+              <Link style={blackText} to="/project">
                 Projects
-              </Link> */}
+              </Link>
               <Link style={blackText} to="/contact">
                 Contact
               </Link>
@@ -42,7 +44,7 @@ class App extends Component {
             <Navigation>
               <Link to="/resume">Resume</Link>
               <Link to="./">About</Link>
-              {/* <Link to="/project">Projects</Link> */}
+              <Link to="/project">Projects</Link>
               <Link to="/contact">Contact</Link>
             </Navigation>
           </Drawer>
