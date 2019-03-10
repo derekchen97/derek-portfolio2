@@ -29,6 +29,8 @@ code {
   color: black;
 }
 
+/* Landingpage.js code here ================================================ */
+
 .landing-grid {
   background: #8e9eab; /* fallback for old browsers */
   background: -webkit-linear-gradient(
@@ -144,6 +146,21 @@ code {
   color: rgba(255, 255, 255, 1);
   font-size: 4em;
   /* padding: 8px; */
+}
+
+/* projects.js code here ================================================ */
+.projects-grid {
+  justify-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2em;
+}
+
+.projects-grid > div {
+  text-align: center;
+  line-height: 75px;
+  padding: 1em;
 }
 
 /* ============ CSS ANIMATIONS HERE ==================== */
