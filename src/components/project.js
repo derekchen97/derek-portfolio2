@@ -26,6 +26,10 @@ class Project extends Component {
       minWidth: "450",
       margin: "auto"
     };
+
+    this.projectText = {
+      height: "100px"
+    };
   }
 
   //varialbes here
@@ -48,11 +52,12 @@ class Project extends Component {
             "Using principles of Object Oriented programming and UML diagrams to create a 2d RPG game using the SLICK + LWJGL (graphic rendering) libraries",
             ["GitHub", "Video", "Demo"]
           )}
+
           {/* project 2 - Unity 3d game in c# */}
           {this.createProject(
-            require("../assets/javaslickgame.png"),
+            require("../assets/retromata-image.png"),
             "Unity 3D Game in C#",
-            "Using principles of Object Oriented programming in Unity 3D to create a 3D game with custom shaders, game persistance (save files) and 3D modelling software (Fusion 360) ",
+            "Using Unity 3D to create a 3D game featuring custom shaders, game persistance (save files) and 3D modelling software (Fusion 360). Implemented fundamental of Object Oriented programming principles and software patterns",
             ["GitHub", "Video", "Demo"]
           )}
         </div>
@@ -97,20 +102,19 @@ class Project extends Component {
    */
   createProject(imageImport, title, text, buttons) {
     return (
-      <div>
+      <div id="fadein-3s">
         <Card className="project" shadow={5} style={this.cardStyle}>
           <CardTitle
             style={{
               color: "#fff",
-              height: "200px",
+              height: "220px",
               background: `url(${imageImport})` + "center / cover"
 
               // backgroundSize: "cover"
             }}
-          >
-            {title}
-          </CardTitle>
-          <CardText>{text}</CardText>
+          />
+          <code>{title}</code>
+          <CardText style={this.projectText}>{text}</CardText>
           <CardActions>{this.createProjectButton(buttons)}</CardActions>
           <CardMenu style={{ color: "#fff" }}>
             {/* <IconButton name="share" /> */}
@@ -129,6 +133,7 @@ class Project extends Component {
     buttons.forEach(button => {
       items.push(<Button colored>{button}</Button>);
     });
+
     return items;
   }
 }

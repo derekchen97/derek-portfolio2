@@ -44,7 +44,7 @@ class App extends Component {
             <Navigation>
               <Link to="/resume">Resume</Link>
               <Link to="./">About</Link>
-              <Link to="/project">Projects</Link>
+              {/* <Link to="/project">Projects</Link> */}
               <Link to="/contact">Contact</Link>
             </Navigation>
           </Drawer>
