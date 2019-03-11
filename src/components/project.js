@@ -41,7 +41,7 @@ class Project extends Component {
     };
 
     this.projectText = {
-      height: "100px"
+      height: "150px"
     };
   }
 
@@ -207,7 +207,7 @@ class Project extends Component {
               // backgroundSize: "cover"
             }}
           />
-          <code>{title}</code>
+          <h4>{title}</h4>
           <CardText style={this.projectText}>{text}</CardText>
           <CardActions>{this.createProjectButton(buttons)}</CardActions>
           <CardMenu style={{ color: "#fff" }}>
