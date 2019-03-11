@@ -10,16 +10,26 @@ import {
   CardActions,
   CardMenu,
   IconButton,
-  Button
+  Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions
 } from "react-mdl";
+import buttonData from "./dataStructures/buttonData";
 
 class Project extends Component {
   /*the project page will contain tabs to different projects */
   constructor(props) {
     super(props);
     this.state = {
-      activeTab: 0
+      activeTab: 0,
+      openDialog: false,
+      videoUrl: ""
     };
+
+    this.handleOpenDialog = this.handleOpenDialog.bind(this);
+    this.handleCloseDialog = this.handleCloseDialog.bind(this);
 
     //react styles:
     this.cardStyle = {
@@ -50,8 +60,25 @@ class Project extends Component {
             require("../assets/javaslickgame.png"),
             "Java Slick Game",
             "Using principles of Object Oriented programming and UML diagrams to create a 2d RPG game using the SLICK + LWJGL (graphic rendering) libraries",
-            ["GitHub", "Video", "Demo"]
+            [
+              new buttonData(
+                "GitHub",
+                "https://github.com/dezzy001/SWEN20003-project2",
+                "link"
+              ),
+              new buttonData(
+                "DEMO",
+                "https://drive.google.com/open?id=1DmXzvD_zh6a848UjnVkovNSvd_-K62Rl",
+                "link"
+              ),
+              new buttonData(
+                "Video",
+                "https://www.youtube.com/embed/LBp_ZgntJ2A?rel=0&showinfo=0&disablekb=1&modestbranding=1",
+                "video"
+              )
+            ]
           )}
+
           {/* <iframe
             width="560"
             height="315"
@@ -65,17 +92,24 @@ class Project extends Component {
             require("../assets/retromata-image.png"),
             "Unity 3D Game in C#",
             "Using Unity 3D to create a 3D game featuring custom shaders, game persistance (save files) and 3D modelling software (Fusion 360). Implemented fundamental of Object Oriented programming principles and software patterns",
-            ["GitHub", "Video", "Demo"]
+            [
+              new buttonData(
+                "GitHub",
+                "https://github.com/dezzy001/COMP30019-project2",
+                "link"
+              ),
+              new buttonData(
+                "DEMO",
+                "https://drive.google.com/open?id=11gGc9HO8hFKS-yYFypohYqm1Y82m6hQJ",
+                "link"
+              ),
+              new buttonData(
+                "Video",
+                "https://www.youtube.com/embed/LBp_ZgntJ2A?rel=0&showinfo=0&disablekb=1&modestbranding=1",
+                "video"
+              )
+            ]
           )}
-
-          {/* <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/LBp_ZgntJ2A?rel=0&showinfo=0&disablekb=1&modestbranding=1"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          /> */}
         </div>
       );
     } else if (this.state.activeTab === 1) {
@@ -104,8 +138,52 @@ class Project extends Component {
             <div className="content">{this.insertProjects()} </div>
           </Cell>
         </Grid>
+
+        {/* Popup dialog/ modal box for show case videos or about me section */}
+        <Dialog open={this.state.openDialog}>
+          <Grid>
+            <Cell col={12}>
+              <div className="content">{this.insertProjects()} </div>
+            </Cell>
+          </Grid>
+          <DialogTitle>Video</DialogTitle>
+          {/* <div className="video-container"> */}
+          <DialogContent>
+            <iframe
+              width="560"
+              height="315"
+              src={this.state.videoUrl}
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            />
+          </DialogContent>
+          {/* </div> */}
+
+          <DialogActions>
+            {/* <Button type="button">Agree</Button> */}
+            <Button type="button" onClick={this.handleCloseDialog}>
+              Close
+            </Button>
+          </DialogActions>
+        </Dialog>
       </div>
     );
+  }
+
+  // handle modal(dialog box) here for videos/about project
+  handleOpenDialog(url) {
+    // this.videoUrl = url;
+    this.setState({
+      openDialog: true,
+      videoUrl: url
+    });
+  }
+
+  handleCloseDialog() {
+    this.setState({
+      openDialog: false
+    });
   }
 
   //project methods down here:
@@ -147,7 +225,27 @@ class Project extends Component {
   createProjectButton(buttons) {
     let items = [];
     buttons.forEach(button => {
-      // items.push(<Button colored>{button}</Button>);
+      if (button.type == "video") {
+        //create a modal/dialog popup for the video
+        items.push(
+          <Button
+            colored
+            onClick={() => this.handleOpenDialog(button.url)}
+            raised
+            ripple
+            target="_blank"
+          >
+            {button.name}
+          </Button>
+        );
+      } else if (button.type == "link") {
+        //link to a new tab (new tab use target="_blank")
+        items.push(
+          <Button colored href={button.url} target="_blank">
+            {button.name}
+          </Button>
+        );
+      }
     });
 
     return items;
