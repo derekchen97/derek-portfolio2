@@ -17,6 +17,7 @@ import {
   DialogActions
 } from "react-mdl";
 import buttonData from "./dataStructures/buttonData";
+import { Modal } from "react-bootstrap";
 
 class Project extends Component {
   /*the project page will contain tabs to different projects */
@@ -25,11 +26,13 @@ class Project extends Component {
     this.state = {
       activeTab: 0,
       openDialog: false,
-      videoUrl: ""
+      videoUrl: "",
+      show: false
     };
 
-    this.handleOpenDialog = this.handleOpenDialog.bind(this);
-    this.handleCloseDialog = this.handleCloseDialog.bind(this);
+    // test
+    this.handleShow = this.handleShow.bind(this);
+    this.handleClose = this.handleClose.bind(this);
 
     //react styles:
     this.cardStyle = {
@@ -105,7 +108,7 @@ class Project extends Component {
               ),
               new buttonData(
                 "Video",
-                "https://www.youtube.com/embed/LBp_ZgntJ2A?rel=0&showinfo=0&disablekb=1&modestbranding=1",
+                "https://www.youtube.com/embed/IsEQJNNJtqM?rel=0&showinfo=0&disablekb=1&modestbranding=1",
                 "video"
               )
             ]
@@ -140,50 +143,47 @@ class Project extends Component {
         </Grid>
 
         {/* Popup dialog/ modal box for show case videos or about me section */}
-        <Dialog open={this.state.openDialog}>
-          <Grid>
-            <Cell col={12}>
-              <div className="content">{this.insertProjects()} </div>
-            </Cell>
-          </Grid>
-          <DialogTitle>Video</DialogTitle>
-          {/* <div className="video-container"> */}
-          <DialogContent>
-            <iframe
-              width="560"
-              height="315"
-              src={this.state.videoUrl}
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            />
-          </DialogContent>
-          {/* </div> */}
 
-          <DialogActions>
-            {/* <Button type="button">Agree</Button> */}
-            <Button type="button" onClick={this.handleCloseDialog}>
+        <Modal
+          size="lg"
+          animation
+          show={this.state.show}
+          onHide={this.handleClose}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>{}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="video-container">
+              <iframe
+                width="560"
+                height="315"
+                src={this.state.videoUrl}
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              />
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            {/* <Button variant="secondary" onClick={this.handleClose}>
               Close
-            </Button>
-          </DialogActions>
-        </Dialog>
+            </Button> */}
+          </Modal.Footer>
+        </Modal>
       </div>
     );
   }
 
   // handle modal(dialog box) here for videos/about project
-  handleOpenDialog(url) {
-    // this.videoUrl = url;
-    this.setState({
-      openDialog: true,
-      videoUrl: url
-    });
+  handleClose() {
+    //closes the modal
+    this.setState({ show: false });
   }
 
-  handleCloseDialog() {
-    this.setState({
-      openDialog: false
-    });
+  handleShow(url) {
+    // turns on the model with the selected video
+    this.setState({ show: true, videoUrl: url });
   }
 
   //project methods down here:
@@ -230,7 +230,7 @@ class Project extends Component {
         items.push(
           <Button
             colored
-            onClick={() => this.handleOpenDialog(button.url)}
+            onClick={() => this.handleShow(button.url)}
             raised
             ripple
             target="_blank"
