@@ -5,8 +5,8 @@ class LandingPage extends Component {
   state = {};
   render() {
     return (
-      <div style={{ width: "100%", margin: "auto" }}>
-        <Grid className="landing-grid">
+      <div className="landing-container gradient-bg">
+        <Grid className="landing-grid gradient-bg">
           <Cell col={12}>
             <img
               src={require("../assets/profilepic.jpg")}

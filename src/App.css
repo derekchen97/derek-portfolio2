@@ -58,27 +58,24 @@ code {
 }
 
 /* Landingpage.js code here ================================================ */
+.landing-container {
+  height: 100%;
+  /* width: 100%;
+  margin: auto;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; */
+  padding-bottom: 2em;
+}
 
 .landing-grid {
-  background: #8e9eab; /* fallback for old browsers */
-  background: -webkit-linear-gradient(
-    to right,
-    #eef2f3,
-    #8e9eab
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    #eef2f3,
-    #8e9eab
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
   text-align: center;
-  position: fixed;
+  /* position: fixed;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; */
 }
 
 /* Avatar code here -------------------------------------------- */
@@ -218,13 +215,14 @@ code {
 
 .contact-body {
   margin: auto;
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   height: 100%;
   justify-content: center;
   padding-top: 2em;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch;
+  padding-bottom: 2em;
+  /* overflow: scroll;
+  -webkit-overflow-scrolling: touch; */
   font-size: 1.5em;
 }
 
