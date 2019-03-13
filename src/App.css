@@ -58,7 +58,7 @@ code {
   color: rgba(0, 0, 0, 0.8) !important;
   font-family: monospace;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 .nav-links:hover {
