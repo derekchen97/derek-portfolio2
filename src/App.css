@@ -59,15 +59,20 @@ code {
   font-family: monospace !important;
   text-decoration: none !important;
   font-size: 1.2em !important;
+  /* transition-duration: 300ms; */
+  /* transition-property: color; the transitions you want (e.g check in the hover state) */
+  /* transition-timing-function: ease-out; */
+  transition: 400ms color ease-out;
 }
 
 .nav-links:hover {
-  /* color: white !important; */
-  -webkit-animation: toWhite 0.2s ease-in 0s 1 forwards; /* Safari, Chrome and Opera > 12.1 */
-  -moz-animation: toWhite 0.2s ease-in 0s 1 forwards; /* Firefox < 16 */
-  -ms-animation: toWhite 0.2s ease-in 0s 1 forwards; /* Internet Explorer */
-  -o-animation: toWhite 0.2s ease-in 0s 1 forwards; /* Opera < 12.1 */
-  animation: toWhite 0.2s ease-in 0s 1 forwards;
+  color: rgba(255, 255, 255, 0.9) !important;
+  /* transform: rotate(5deg); */
+  /* -webkit-animation: toWhite 0.2s ease-in 0s 1 forwards;
+  -moz-animation: toWhite 0.2s ease-in 0s 1 forwards;
+  -ms-animation: toWhite 0.2s ease-in 0s 1 forwards;
+  -o-animation: toWhite 0.2s ease-in 0s 1 forwards; 
+  animation: toWhite 0.2s ease-in 0s 1 forwards; */
   /* text-decoration: underline solid white !important; */
   /* background-color: #fff; */
 }
