@@ -1,6 +1,5 @@
 /* native tags */
 * {
-  /* black text */
   color: black;
 }
 
@@ -44,10 +43,6 @@ code {
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
-.link {
-  color: black;
-}
-
 /* fade in animation */
 #fadein-2s {
   -webkit-animation: fadein 2s ease-out; /* Safari, Chrome and Opera > 12.1 */
@@ -55,6 +50,26 @@ code {
   -ms-animation: fadein 2s ease-out; /* Internet Explorer */
   -o-animation: fadein 2s ease-out; /* Opera < 12.1 */
   animation: fadein 2s ease-out;
+}
+
+/* Navigation Bar here ====================================================== */
+
+.nav-links {
+  color: rgba(0, 0, 0, 0.8) !important;
+  font-family: monospace;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+.nav-links:hover {
+  /* color: white !important; */
+  -webkit-animation: toWhite 0.2s ease-in 0s 1 forwards; /* Safari, Chrome and Opera > 12.1 */
+  -moz-animation: toWhite 0.2s ease-in 0s 1 forwards; /* Firefox < 16 */
+  -ms-animation: toWhite 0.2s ease-in 0s 1 forwards; /* Internet Explorer */
+  -o-animation: toWhite 0.2s ease-in 0s 1 forwards; /* Opera < 12.1 */
+  animation: toWhite 0.2s ease-in 0s 1 forwards;
+  /* text-decoration: underline solid white !important; */
+  /* background-color: #fff; */
 }
 
 /* Landingpage.js code here ================================================ */
@@ -154,7 +169,7 @@ code {
 
 .social-links i {
   color: rgba(255, 255, 255, 0.7);
-  font-size: 2.4em;
+  font-size: 2.4em !important;
   padding-left: 2vw;
   padding-right: 2vw;
 }
@@ -269,7 +284,41 @@ code {
 }
 
 /* ============ CSS ANIMATIONS HERE ==================== */
-/* fade in keyframes $$$$$$$$$$$$$$ */
+
+/* to white keyframes $$$$$$$$$$$$$$ */
+@keyframes toWhite {
+  to {
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
+/* Firefox < 16 */
+@-moz-keyframes toWhite {
+  to {
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes toWhite {
+  to {
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes toWhite {
+  to {
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes toWhite {
+  to {
+    color: rgba(255, 255, 255, 0.95);
+  }
+}
+/* slideInFromBelow key frame $$$$$$$$$$$$$$ */
 @keyframes slideInFromBelow {
   0% {
     transform: translateY(10%);

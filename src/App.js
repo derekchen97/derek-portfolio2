@@ -12,7 +12,10 @@ class App extends Component {
 
     //react-styles
     let blackText = {
-      color: "#000"
+      color: "rgba(0,0,0,0.9)",
+      fontFamily: "monospace",
+      textDecoration: "none",
+      fontSize: "1.5em"
     };
 
     //return virtual dom
@@ -27,16 +30,16 @@ class App extends Component {
           >
             <Navigation>
               {/* <Link style={blackText} to="/resume">
-                Resume
+                <a className="nav-links">Resume</a>
               </Link> */}
               <Link style={blackText} to="./">
-                About
+                <a className="nav-links">About</a>
               </Link>
               <Link style={blackText} to="/project">
-                Projects
+                <a className="nav-links">Projects</a>
               </Link>
               <Link style={blackText} to="/contact">
-                Contact
+                <a className="nav-links">Contact</a>
               </Link>
             </Navigation>
           </Header>

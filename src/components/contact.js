@@ -10,6 +10,7 @@ import {
 } from "react-mdl";
 
 import { Table } from "react-bootstrap";
+import Sociallink from "./sub-components/Sociallink";
 
 class Contact extends Component {
   constructor(props) {

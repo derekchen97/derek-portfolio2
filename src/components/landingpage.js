@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Grid, Cell } from "react-mdl";
+import Sociallink from "./sub-components/Sociallink";
 
 class LandingPage extends Component {
   state = {};
@@ -47,24 +48,7 @@ class LandingPage extends Component {
 
               <br />
 
-              <div className="social-links">
-                {/* linkedin */}
-                <a
-                  href="https://www.linkedin.com/in/derek-chen-521b16146/"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <i className="fa fa-linkedin-square" aria-hidden="true" />
-                </a>
-                {/* Github */}
-                <a
-                  href="https://github.com/dezzy001"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  <i className="fa fa-github-square" aria-hidden="true" />
-                </a>
-              </div>
+              <Sociallink />
             </div>
           </Cell>
         </Grid>
