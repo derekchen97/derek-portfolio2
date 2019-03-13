@@ -55,10 +55,10 @@ code {
 /* Navigation Bar here ====================================================== */
 
 .nav-links {
-  color: rgba(0, 0, 0, 0.8) !important;
-  font-family: monospace;
-  text-decoration: none;
-  font-size: 1em;
+  /* need important otherwise the style wont apply to react component  */
+  font-family: monospace !important;
+  text-decoration: none !important;
+  font-size: 1.2em !important;
 }
 
 .nav-links:hover {
@@ -288,34 +288,34 @@ code {
 /* to white keyframes $$$$$$$$$$$$$$ */
 @keyframes toWhite {
   to {
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 0.5);
   }
 }
 /* Firefox < 16 */
 @-moz-keyframes toWhite {
   to {
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 0.5);
   }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes toWhite {
   to {
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 0.5);
   }
 }
 
 /* Internet Explorer */
 @-ms-keyframes toWhite {
   to {
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 0.5);
   }
 }
 
 /* Opera < 12.1 */
 @-o-keyframes toWhite {
   to {
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 0.5);
   }
 }
 /* slideInFromBelow key frame $$$$$$$$$$$$$$ */

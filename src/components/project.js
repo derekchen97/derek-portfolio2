@@ -46,7 +46,70 @@ class Project extends Component {
   }
 
   //varialbes here
+  render() {
+    return (
+      <div className="category-tabs">
+        <Tabs
+          activeTab={this.state.activeTab}
+          onChange={tabId => this.setState({ activeTab: tabId })}
+        >
+          <Tab>University Projects</Tab>
+          {/* <Tab>Personal Projects</Tab> */}
+        </Tabs>
 
+        <Grid>
+          <Cell col={12}>
+            <div className="content">{this.insertProjects()} </div>
+          </Cell>
+        </Grid>
+
+        {/* Popup dialog/ modal box for show case videos or about me section */}
+
+        <Modal
+          size="lg"
+          animation
+          show={this.state.show}
+          onHide={this.handleClose}
+        >
+          <Modal.Header closeButton>
+            <Modal.Title>{}</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="video-container">
+              <iframe
+                width="560"
+                height="315"
+                src={this.state.videoUrl}
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              />
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            {/* <Button variant="secondary" onClick={this.handleClose}>
+              Close
+            </Button> */}
+          </Modal.Footer>
+        </Modal>
+      </div>
+    );
+  }
+
+  //functions down here ===============================================================================
+
+  // handle modal(dialog box) here for videos/about project
+  handleClose() {
+    //closes the modal
+    this.setState({ show: false });
+  }
+
+  handleShow(url) {
+    // turns on the model with the selected video
+    this.setState({ show: true, videoUrl: url });
+  }
+
+  //project methods down here #################################
   /**
    * Checks the state of the tabs (if it has been switched)
    * If it has changed, show the appropriate content
@@ -125,68 +188,6 @@ class Project extends Component {
     }
   }
 
-  render() {
-    return (
-      <div className="category-tabs">
-        <Tabs
-          activeTab={this.state.activeTab}
-          onChange={tabId => this.setState({ activeTab: tabId })}
-        >
-          <Tab>University Projects</Tab>
-          {/* <Tab>Personal Projects</Tab> */}
-        </Tabs>
-
-        <Grid>
-          <Cell col={12}>
-            <div className="content">{this.insertProjects()} </div>
-          </Cell>
-        </Grid>
-
-        {/* Popup dialog/ modal box for show case videos or about me section */}
-
-        <Modal
-          size="lg"
-          animation
-          show={this.state.show}
-          onHide={this.handleClose}
-        >
-          <Modal.Header closeButton>
-            <Modal.Title>{}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div className="video-container">
-              <iframe
-                width="560"
-                height="315"
-                src={this.state.videoUrl}
-                frameborder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              />
-            </div>
-          </Modal.Body>
-          <Modal.Footer>
-            {/* <Button variant="secondary" onClick={this.handleClose}>
-              Close
-            </Button> */}
-          </Modal.Footer>
-        </Modal>
-      </div>
-    );
-  }
-
-  // handle modal(dialog box) here for videos/about project
-  handleClose() {
-    //closes the modal
-    this.setState({ show: false });
-  }
-
-  handleShow(url) {
-    // turns on the model with the selected video
-    this.setState({ show: true, videoUrl: url });
-  }
-
-  //project methods down here:
   /**
    * This method returns a project card with the following inputs
    * @param {*} imageImport - takes in the require/import of the image

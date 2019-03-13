@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Layout, Header, Navigation, Drawer, Content } from "react-mdl";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import "./App.css";
 import Main from "./components/main";
@@ -12,10 +12,20 @@ class App extends Component {
 
     //react-styles
     let blackText = {
-      color: "rgba(0,0,0,0.9)",
+      // just need the color for nav link (if done in css file with important, it will overwrite the active text color also)
+      color: "black"
+    };
+
+    let activeText = {
+      //for nav links
+      color: "white",
       fontFamily: "monospace",
-      textDecoration: "none",
-      fontSize: "1.5em"
+      textDecoration: "none"
+      // fontSize: "1em"
+    };
+
+    let activeDrawerText = {
+      backgroundColor: "rgba(100,100,100,0.3)"
     };
 
     //return virtual dom
@@ -32,23 +42,47 @@ class App extends Component {
               {/* <Link style={blackText} to="/resume">
                 <a className="nav-links">Resume</a>
               </Link> */}
-              <Link style={blackText} to="./">
-                <a className="nav-links">About</a>
-              </Link>
-              <Link style={blackText} to="/project">
-                <a className="nav-links">Projects</a>
-              </Link>
-              <Link style={blackText} to="/contact">
-                <a className="nav-links">Contact</a>
-              </Link>
+              <NavLink
+                exact
+                to="/"
+                className="nav-links"
+                style={blackText}
+                activeStyle={activeText}
+              >
+                About
+              </NavLink>
+              <NavLink
+                exact
+                to="/project"
+                className="nav-links"
+                style={blackText}
+                activeStyle={activeText}
+              >
+                Projects
+              </NavLink>
+              <NavLink
+                exact
+                to="/contact"
+                className="nav-links"
+                style={blackText}
+                activeStyle={activeText}
+              >
+                Contact
+              </NavLink>
             </Navigation>
           </Header>
           <Drawer title={title}>
             <Navigation>
               {/* <Link to="/resume">Resume</Link> */}
-              <Link to="./">About</Link>
-              <Link to="/project">Projects</Link>
-              <Link to="/contact">Contact</Link>
+              <NavLink activeStyle={activeDrawerText} exact to="/">
+                About
+              </NavLink>
+              <NavLink activeStyle={activeDrawerText} exact to="/project">
+                Projects
+              </NavLink>
+              <NavLink activeStyle={activeDrawerText} exact to="/contact">
+                Contact
+              </NavLink>
             </Navigation>
           </Drawer>
 
