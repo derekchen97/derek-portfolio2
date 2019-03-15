@@ -19,14 +19,21 @@ import {
 import buttonData from "./dataStructures/buttonData";
 import { Modal } from "react-bootstrap";
 
+//img imports
+import javaslickgameImg from "../assets/javaslickgame.png";
+import retromataImg from "../assets/retromata-image.png";
+
 class Project extends Component {
   /*the project page will contain tabs to different projects */
   constructor(props) {
     super(props);
     this.state = {
       activeTab: 0,
-      openDialog: false,
+
+      //modal states:
       videoUrl: "",
+      modalTitle: "",
+      modalDescription: "",
       show: false
     };
 
@@ -45,7 +52,7 @@ class Project extends Component {
     };
   }
 
-  //varialbes here
+  //render virtual dom here --------
   render() {
     return (
       <div className="category-tabs">
@@ -72,7 +79,7 @@ class Project extends Component {
           onHide={this.handleClose}
         >
           <Modal.Header closeButton>
-            <Modal.Title>{}</Modal.Title>
+            <Modal.Title>{this.state.modalTitle}</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div className="video-container">
@@ -86,11 +93,7 @@ class Project extends Component {
               />
             </div>
           </Modal.Body>
-          <Modal.Footer>
-            {/* <Button variant="secondary" onClick={this.handleClose}>
-              Close
-            </Button> */}
-          </Modal.Footer>
+          <Modal.Footer>{this.state.modalDescription}</Modal.Footer>
         </Modal>
       </div>
     );
@@ -104,9 +107,14 @@ class Project extends Component {
     this.setState({ show: false });
   }
 
-  handleShow(url) {
+  handleShow(url, title, body) {
     // turns on the model with the selected video
-    this.setState({ show: true, videoUrl: url });
+    this.setState({
+      show: true,
+      videoUrl: url,
+      modalTitle: title,
+      modalDescription: body
+    });
   }
 
   //project methods down here #################################
@@ -123,9 +131,10 @@ class Project extends Component {
         <div className="projects-grid">
           {/* project 1 - slick game in java */}
           {this.createProject(
-            require("../assets/javaslickgame.png"),
+            javaslickgameImg,
             "Java Slick Game",
             "Using principles of Object Oriented programming and UML diagrams to create a 2d RPG game using the SLICK + LWJGL (graphic rendering) libraries",
+            "",
             [
               new buttonData(
                 "GitHub",
@@ -145,19 +154,12 @@ class Project extends Component {
             ]
           )}
 
-          {/* <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/qOXkXWtiA4wrel=0&showinfo=0&disablekb=1&modestbranding=1"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          /> */}
           {/* project 2 - Unity 3d game in c# */}
           {this.createProject(
-            require("../assets/retromata-image.png"),
+            retromataImg,
             "Unity 3D Game in C#",
             "Using Unity 3D to create a 3D game featuring custom shaders, game persistance (save files) and 3D modelling software (Fusion 360). Implemented fundamental of Object Oriented programming principles and software patterns",
+            "",
             [
               new buttonData(
                 "GitHub",
@@ -191,11 +193,12 @@ class Project extends Component {
   /**
    * This method returns a project card with the following inputs
    * @param {*} imageImport - takes in the require/import of the image
-   * @param {*} title
-   * @param {*} text
-   * @param {*} buttons - array of strings (try keep under 3 strings)
+   * @param {*} title - title of the project
+   * @param {*} snipText - a short summary of the project
+   * @param {*} body - body of the modal
+   * @param {*} buttons - array of buttonData data type (try keep under 3 strings)
    */
-  createProject(imageImport, title, text, buttons) {
+  createProject(imageImport, title, snipText, body, buttons) {
     return (
       <div id="fadein-2s">
         <Card className="project" shadow={5} style={this.cardStyle}>
@@ -204,13 +207,13 @@ class Project extends Component {
               color: "#fff",
               height: "220px",
               background: `url(${imageImport})` + "center / cover"
-
-              // backgroundSize: "cover"
             }}
           />
           <h4>{title}</h4>
-          <CardText style={this.projectText}>{text}</CardText>
-          <CardActions>{this.createProjectButton(buttons)}</CardActions>
+          <CardText style={this.projectText}>{snipText}</CardText>
+          <CardActions>
+            {this.createProjectButton(buttons, title, body)}
+          </CardActions>
           <CardMenu style={{ color: "#fff" }}>
             {/* <IconButton name="share" /> */}
           </CardMenu>
@@ -222,8 +225,10 @@ class Project extends Component {
   /**
    * Returns an array of button react component from a loop of button string names
    * @param {*} buttons - a array of strings for the button name
+   * @param {*} title - title of the project (string)
+   * @param {*} body - body of text for the modal (string)
    */
-  createProjectButton(buttons) {
+  createProjectButton(buttons, title, body) {
     let items = [];
     buttons.forEach(button => {
       if (button.type == "video") {
@@ -231,7 +236,7 @@ class Project extends Component {
         items.push(
           <Button
             colored
-            onClick={() => this.handleShow(button.url)}
+            onClick={() => this.handleShow(button.url, title, body)}
             raised
             ripple
             target="_blank"

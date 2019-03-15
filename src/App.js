@@ -1,3 +1,5 @@
+// App.js is where the website components are pieced together
+
 import React, { Component } from "react";
 import { Layout, Header, Navigation, Drawer, Content } from "react-mdl";
 import { Link, NavLink } from "react-router-dom";
@@ -21,7 +23,6 @@ class App extends Component {
       color: "white",
       fontFamily: "monospace",
       textDecoration: "none"
-      // fontSize: "1em"
     };
 
     let activeDrawerText = {
