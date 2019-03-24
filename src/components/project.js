@@ -9,12 +9,7 @@ import {
   CardText,
   CardActions,
   CardMenu,
-  IconButton,
-  Button,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions
+  Button
 } from "react-mdl";
 import buttonData from "./dataStructures/buttonData";
 import { Modal } from "react-bootstrap";
@@ -23,6 +18,10 @@ import { Modal } from "react-bootstrap";
 import javaslickgameImg from "../assets/javaslickgame.png";
 import retromataImg from "../assets/retromata-image.png";
 import phpSQLImage1 from "../assets/phpSQLImage1.png";
+import javaslickgameUML from "../assets/javaslickgameUML.png";
+
+//pdf imports
+import javaslickgameUMLpdf from "../assets/javaslickgameUMLpdf.pdf";
 
 class Project extends Component {
   /*the project page will contain tabs to different projects */
@@ -88,9 +87,9 @@ class Project extends Component {
                 width="560"
                 height="315"
                 src={this.state.videoUrl}
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
               />
             </div>
           </Modal.Body>
@@ -135,7 +134,22 @@ class Project extends Component {
             javaslickgameImg,
             "Java Slick Game",
             "Using principles of Object Oriented programming and UML diagrams to create a 2d RPG game using the SLICK + LWJGL (graphic rendering) libraries",
-            "",
+
+            <div className="modal-container">
+              <h4>UML Diagram</h4>
+              <p>
+                Being able to design the UML diagram architecture is a large
+                part of the project. Defining the relationship and dependancies
+                between the classes makes it easy to visualise how we can
+                implment certain design principles such as inheritence. The pdf
+                version of the UML diagram can be found{" "}
+                <a href={javaslickgameUMLpdf} target="_blank">
+                  here
+                </a>
+                .
+              </p>
+              <img src={javaslickgameUML} className="img-container" />
+            </div>,
             [
               new buttonData(
                 "GitHub",

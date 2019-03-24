@@ -217,6 +217,20 @@ code {
   height: 100%;
 }
 
+.modal-container {
+  position: relative;
+  /* padding-bottom: 56.25%; */
+  /* padding-top: 30px; */
+  /* height: 0; */
+  overflow: hidden;
+}
+
+.img-container {
+  position: relative;
+  max-height: 800px;
+  max-width: 100%;
+}
+
 /* contact.js code here ================================================ */
 
 .contact-body {
