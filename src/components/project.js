@@ -22,6 +22,7 @@ import { Modal } from "react-bootstrap";
 //img imports
 import javaslickgameImg from "../assets/javaslickgame.png";
 import retromataImg from "../assets/retromata-image.png";
+import phpSQLImage1 from "../assets/phpSQLImage1.png";
 
 class Project extends Component {
   /*the project page will contain tabs to different projects */
@@ -175,6 +176,26 @@ class Project extends Component {
                 "Video",
                 "https://www.youtube.com/embed/IsEQJNNJtqM?rel=0&showinfo=0&disablekb=1&modestbranding=1",
                 "video"
+              )
+            ]
+          )}
+
+          {/* project 3 - PHP & MySQL Website */}
+          {this.createProject(
+            phpSQLImage1,
+            "PHP & MySQL Website",
+            "Using PHP and MySQL to create a mock staff website for a Spatula Company. Includes features such as ordering spatula's and browsing spatula's. Utilised CRUD principles and php to manipulate the database (currently live on Google Cloud Platform).",
+            "",
+            [
+              new buttonData(
+                "GitHub",
+                "https://github.com/dezzy001/INFO20003-project3",
+                "link"
+              ),
+              new buttonData(
+                "WEBSITE",
+                "http://34.73.202.34/INFO20003-project3/order.php",
+                "link"
               )
             ]
           )}
