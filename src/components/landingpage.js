@@ -5,6 +5,13 @@ import Sociallink from "./sub-components/Sociallink";
 class LandingPage extends Component {
   state = {};
   render() {
+    
+    const experienceStyle = {
+      fontSize: "1.2em",
+      color: "white",
+      fontFamily: "monospace"
+    }
+    
     return (
       <div className="landing-container gradient-bg">
         <Grid className="landing-grid gradient-bg">
@@ -18,11 +25,12 @@ class LandingPage extends Component {
             <div className="banner-text">
               <h1>Derek's Portfolio</h1>
               <h2
-                style={{
-                  fontSize: "1.2em",
-                  color: "white",
-                  fontFamily: "monospace"
-                }}
+                style={experienceStyle}
+              >
+                Junior Software Developer - Expedient Software | A BluJay Solutions Company
+              </h2>
+              <h2
+                style={experienceStyle}
               >
                 University of Melbourne Graduate - Bachelor of Science Majoring
                 in Computing and Software systems
@@ -32,11 +40,11 @@ class LandingPage extends Component {
               <div className="inline-block-div">
                 <p>
                   <code id="fade-in-animation-0-delay">
-                    <b>1 | Scripting:</b> Java | C | python | C#
+                    <b>1 | Scripting:</b> Genero FourJS | Java | C | python | C#
                   </code>
                   <br />
                   <code id="fade-in-animation-1-delay">
-                    <b>2 | Database:</b> SQL | firebase
+                    <b>2 | Database:</b> Informix DBMS | MySQL | firebase
                   </code>{" "}
                   <br />
                   <code id="fade-in-animation-2-delay">
