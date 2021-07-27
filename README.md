@@ -1,2 +1,2 @@
 # Derek Chen's Portfolio Site
-- 🚀 Built with React and Material UI for styling
+- 🚀 Built with React and Material Design Lite for styling
