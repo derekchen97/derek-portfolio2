@@ -14,7 +14,7 @@ class Sociallink extends Component {
         </a>
         {/* Github */}
         <a
-          href="https://github.com/dezzy001"
+          href="https://github.com/derekchen97"
           rel="noopener noreferrer"
           target="_blank"
         >
