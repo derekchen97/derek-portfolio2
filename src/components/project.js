@@ -205,11 +205,6 @@ class Project extends Component {
                 "GitHub",
                 "https://github.com/dezzy001/INFO20003-project3",
                 "link"
-              ),
-              new buttonData(
-                "WEBSITE",
-                "http://34.73.202.34/INFO20003-project3/order.php",
-                "link"
               )
             ]
           )}
